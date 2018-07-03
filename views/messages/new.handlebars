@@ -1,0 +1,51 @@
+<div class="my-3 p-3 bg-white card card-body rounded box-shadow">
+
+    <!-- Heading -->
+    <div class="row border-bottom border-gray pb-2 mb-3">
+        <!-- Name display -->
+        <div class="col-8">
+            <h5>New message</h5>
+        </div>
+
+        <!-- Back button -->
+        <div class="col-4">
+            <small class="d-block text-right">
+                <a href="/messages/">
+                    <h6 style="display:inline">
+                        <i class="fa fa-chevron-left"></i> Messages</h6>
+                </a>
+            </small>
+        </div>
+    </div>
+
+    <!-- Card Form -->
+    <form name="newmessageform" method="post" onsubmit="OnSubmitNewMessageForm()">
+
+        <!-- Recipient -->
+        <div class="form-group">
+            <label for="recipient">Recipient</label>
+            <div class="input-group mb-2 mr-sm-2">
+                <select class="custom-select" id="select-recipient" required>
+                    <option value="" selected>Choose...</option>
+                    {{#each contacts}}
+                    <option value="{{id}}">{{firstname}} {{lastname}} - @{{nickname}}</option>
+                    {{/each}}
+                </select>
+                <div class="input-group-append">
+                    <!-- Submit button -->
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+</div>
+
+<script type="text/javascript">
+    function OnSubmitNewMessageForm() {
+        var select = document.getElementById('select-recipient');
+        var recipient_id = select.options[select.selectedIndex].value;
+        document.newmessageform.action = "/messages/new/" + recipient_id;
+        myform.submit();
+    }
+</script>

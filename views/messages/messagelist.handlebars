@@ -1,0 +1,65 @@
+<div class="my-3 bg-white card card-body rounded box-shadow messagecard">
+
+    <!-- Heading -->
+    <div class="row border-gray pb-2">
+        <!-- Name display -->
+        <div class="col-8">
+            <h5 class="border-gray pb-2 mb-0">Messages</h5>
+        </div>
+
+        <!-- New message button -->
+        <div class="col-4">
+            <small class="d-block text-right">
+                <a href="/messages/new">
+                    <div style="font-size:1.6em">
+                        <i class="fa fa-plus"></i>
+                    </div>
+                </a>
+            </small>
+        </div>
+    </div>
+
+    {{#each chatheads}}
+    <!-- Load in contacts -->
+    <div class="row border-top border-gray pb-3 pt-3">
+
+        <!-- Sender -->
+        <div class="col-10 media text-muted">
+            <!-- Profile image -->
+            {{#if image}}
+            <img alt="48x48" class="mr-2 rounded" src="{{image}}" style="width: 48px; height: 48px;"> {{else}}
+            <img alt="48x48" class="mr-2 rounded" src="/images/profile_picture.jpg" style="width: 48px; height: 48px;"> {{/if}}
+
+            <!-- User info -->
+            <div class="media-body small">
+                <div class="d-flex justify-content-between align-items-center w-100">
+                    <a href="/messages/{{id}}">
+                        <strong class="text-gray-dark">{{firstname}} {{lastname}}</strong>
+                    </a>
+                </div>
+                <span class="crop-text-line pt-1">{{lastmessage}}</span>
+            </div>
+        </div>
+
+        <!-- Last message -->
+        <div class="col-2 media text-muted text-right">
+            <div class="media-body small">
+                {{time}}
+            </div>
+        </div>
+    </div>
+    {{else}}
+    <!-- No Messages -->
+    <div class="row border-top border-gray pb-2 pt-4">
+        <div class="col-10 media text-muted">
+            <div class="media-body pb-3 mb-0 small lh-125">
+                <div class="d-flex justify-content-between align-items-center w-100">
+                    <strong class="text-gray-dark">No messages yet</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+
+
+</div>

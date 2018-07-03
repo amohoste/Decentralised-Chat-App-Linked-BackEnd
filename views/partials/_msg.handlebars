@@ -1,0 +1,13 @@
+<!-- Success flash message -->
+{{#if success_msg}}
+    <div class="alert alert-success alert-dismissible">{{success_msg}}
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    </div>
+{{/if}} 
+
+<!-- Error flash message -->
+{{#if error_msg}}
+    <div class="alert alert-danger alert-dismissible">{{error_msg}}
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    </div>
+{{/if}}

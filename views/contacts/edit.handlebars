@@ -1,0 +1,51 @@
+<div class="my-3 p-3 bg-white card card-body rounded box-shadow">
+
+    <!-- Heading -->
+    <div class="row border-bottom border-gray pb-2 mb-3">
+        <!-- Name display -->
+        <div class="col-8">
+            <h5>Edit Contact</h5>
+        </div>
+
+        <!-- Back button -->
+        <div class="col-4">
+            <small class="d-block text-right">
+                <a href="/contacts/">
+                    <h6 style="display:inline">
+                        <i class="fa fa-chevron-left"></i> Contacts</h6>
+                </a>
+            </small>
+        </div>
+    </div>
+
+    <!-- Card Form -->
+    <form action="/contacts/{{id}}?_method=PUT" method="post">
+        <input type="hidden" name="_method" value="PUT">
+        <!-- method override required hidden field -->
+
+         <!-- Url -->
+        <div class="form-group">
+            <label for="url">Data pod URL</label>
+            <div class="input-group mb-2 mr-sm-2">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">URL</span>
+                </div>
+                <input type="text" class="form-control" name="reference" placeholder="http://example.com" value="{{reference}}" required>
+            </div>
+        </div>
+
+        <!-- Username -->
+        <div class="form-group">
+            <label for="username">Nickname</label>
+            <div class="input-group mb-2 mr-sm-2">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">@</div>
+                </div>
+                <input type="text" class="form-control" name="nickname" placeholder="Nickname" value="{{nickname}}" required>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+</div>

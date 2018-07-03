@@ -1,0 +1,12 @@
+<!-- Passport errors -->
+{{#if error}}
+<div class="alert alert-danger alert-dismissible">{{error}}
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+</div>
+{{/if}}
+
+{{#each errors}}
+<div class="alert alert-danger alert-dismissible">{{text}}
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+</div>
+{{else}} {{/each}}

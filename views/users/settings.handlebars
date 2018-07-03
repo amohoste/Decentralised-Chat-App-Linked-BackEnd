@@ -1,0 +1,68 @@
+<div class="my-3 p-3 bg-white card card-body rounded box-shadow">
+
+    <!-- Heading -->
+    <div class="row border-bottom border-gray pb-2 mb-3">
+        <div class="col-8">
+            <h5>User Settings</h5>
+        </div>
+
+        <!-- Back button -->
+        <div class="col-4">
+            <small class="d-block text-right">
+                <a href="/users/profile">
+                    <h6 style="display:inline">
+                        <i class="fa fa-chevron-left"></i> Profile</h6>
+                </a>
+            </small>
+        </div>
+    </div>
+
+    <!-- Card Form -->
+    <form action="/users/settings/datapod" method="post">
+
+        <!-- Datapod url -->
+        <div class="form-group">
+            <label for="datapod">Data pod URL</label>
+            <div class="input-group mb-2 mr-sm-2">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">URL</span>
+                </div>
+                <input type="text" class="form-control" id="datapod" name="datapod" placeholder="http://example.com" value="{{datapod}}"
+                    required>
+                <div class="input-group-append">
+                    <!-- Submit button -->
+                    <button type="submit" class="btn btn-primary">Confirm</button>
+                </div>
+            </div>
+        </div>
+
+    </form>
+
+    <hr class="mb-3 mt-3">
+
+    <!-- Password Form -->
+    <form action="/users/settings/password" method="post">
+        <!-- Old Password -->
+        <div class="form-group">
+            <label for="oldpass">Old password</label>
+            <input type="password" class="form-control" placeholder="Password" id="oldpass" name="oldpass" required>
+        </div>
+
+        <div class="form-row">
+            <!-- Password -->
+            <div class="form-group col-md-6">
+                <label for="newpass">New Password</label>
+                <input type="password" class="form-control" placeholder="New Password" id="newpass" name="newpass" required>
+            </div>
+
+            <!-- Confirm Password -->
+            <div class="form-group col-md-6">
+                <label for="newpass2">Confirm New Password</label>
+                <input type="password" class="form-control" placeholder="New Password" id="newpass2" name="newpass2"  required>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Change Password</button>
+    </form>
+
+</div>

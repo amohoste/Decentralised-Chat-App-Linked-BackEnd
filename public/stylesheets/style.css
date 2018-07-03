@@ -1,0 +1,63 @@
+/* Custom grey background */
+.bg-grey {
+  background-color: #ABB7B7;
+}
+
+/* Chat box */
+textarea.messagebox {
+  max-height: 8rem;
+  min-height: 2.5rem;
+  resize: none;
+}
+
+.scroll-box {
+  overflow-y: scroll;
+  height: 400px;
+  padding: 1rem
+}
+
+.downscroll {
+  overflow: auto;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.crop-text-line {
+  overflow : hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+
+.messagecard {
+  padding-bottom: 5px;
+}
+
+/* Login form */
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+
+.form-signin .form-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="username"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
